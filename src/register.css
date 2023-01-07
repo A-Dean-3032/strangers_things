@@ -1,0 +1,8 @@
+.noshow {
+  display:none;
+}
+
+.yesshow {
+  display:flex;
+  color:red;
+}
