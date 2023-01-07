@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './register.css'
 
 const Base_URL = "https://strangers-things.herokuapp.com/api";
@@ -26,7 +25,7 @@ function Register(props) {
         },
       })
 
-    const token = props.token;
+    // const token = props.token;
     const setToken = props.setToken
     
     try{
@@ -78,7 +77,6 @@ function Register(props) {
         <input
           type={"password"}
           onChange={(e) => {
-            // props.setPassword(e.target.value);
             passwordReEntry = e.target.value;
           }}
         ></input>
