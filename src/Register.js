@@ -1,4 +1,5 @@
 import './register.css'
+import { useNavigate } from 'react-router-dom';
 
 const Base_URL = "https://strangers-things.herokuapp.com/api";
 const Cohort_Name = "2209-ftb-et-web-pt";
@@ -6,6 +7,7 @@ const Cohort_Name = "2209-ftb-et-web-pt";
 function Register(props) {
   let passwordReEntry ='';
   let passwordMatch = document.getElementById('passwordMatch');
+  const navigate = useNavigate();
 
     async function registerHandler () {
       if (props.password === passwordReEntry) {
@@ -39,6 +41,7 @@ function Register(props) {
         document.getElementById('usernameInput').value='';
         document.getElementById('passwordInput').value='';
         document.getElementById('reentryInput').value='';
+        navigate('/');
       } else if (!json.success) {
         console.log('Failed to register, that username is taken');
         document.getElementById('passwordInput').value='';
