@@ -15,7 +15,7 @@ const Login = (props) => {
       }
     })
 
-    const token = props.token;
+    // const token = props.token;
     const setToken = props.setToken;
 
   try{  
@@ -43,7 +43,7 @@ const Login = (props) => {
   }
   }
   return (
-    <div>
+    <form>
       <div>Username</div>
         <input
           onChange={(e) => {
@@ -58,11 +58,14 @@ const Login = (props) => {
           }}
         ></input>
         <button 
-          onClick={loginHandler}
+          onClick={(e) => {
+            e.preventDefault();
+            loginHandler();
+          }}
         >
           Log in 
         </button>
-    </div>
+    </form>
   )
 
 }

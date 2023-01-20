@@ -41,7 +41,7 @@ function Register(props) {
         document.getElementById('usernameInput').value='';
         document.getElementById('passwordInput').value='';
         document.getElementById('reentryInput').value='';
-        navigate('/');
+        navigate('/login');
       } else if (!json.success) {
         console.log('Failed to register, that username is taken');
         document.getElementById('passwordInput').value='';
