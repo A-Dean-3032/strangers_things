@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin:none;
+  padding:0;
+}
+
+body {
+  width: 100%;
+}
+
+.postsList {
+  list-style: none;
+}
+
+.individualPost {
+  display: flex;
+  background-color: lightgray;
+  flex-flow:column;
+  justify-content: center;
+  align-items: center;
+  width:80%;
+  margin-bottom: 2em;
+  margin-right:none;
+  padding-bottom:1em;
+  border-radius: 25%;
+}
+
+.postsTitle {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.postsDescription {
+  text-align: center;
+}
+
+

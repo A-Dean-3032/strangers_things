@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Posts from "./Posts";
+import { Posts, CreatePost, SinglePost } from "./Posts";
 import Register from "./Register";
 import Login from "./Login";
 import Home from "./Home";
+import Profile from "./Profile";
 
 // const Base_URL = "https://strangers-things.herokuapp.com/api";
 // const Cohort_Name = "2209-ftb-et-web-pt";
@@ -63,7 +64,47 @@ const App = () => {
         <Route
           exact
           path="/posts"
-          element={<Posts posts={posts} setPosts={setPosts} />}
+          element={          
+          <Posts
+            posts={posts} 
+            setPosts={setPosts} 
+            token={token}
+          />
+          }
+        />
+        <Route
+          exact
+          path="/posts/create"
+          element={          
+          <CreatePost
+            posts={posts} 
+            setPosts={setPosts} 
+            token={token}
+          />
+          }
+        />
+        <Route
+          exact
+          path="/posts/:postId"
+          element={          
+          <SinglePost
+            posts={posts} 
+            setPosts={setPosts} 
+            token={token}
+          />
+          }
+        />
+        <Route
+          exact
+          path="/profile"
+          element={          
+          <Profile
+            posts={posts} 
+            setPosts={setPosts} 
+            token={token}
+            username={username}
+          />
+          }
         />
       </Routes>
     </BrowserRouter>

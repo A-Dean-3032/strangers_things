@@ -9,7 +9,7 @@ function Register(props) {
   let passwordMatch = document.getElementById('passwordMatch');
   const navigate = useNavigate();
 
-    async function registerHandler () {
+    async function registerHandler() {
       if (props.password === passwordReEntry) {
       passwordMatch.classList.remove('yesshow');
       passwordMatch.classList.add('noshow');
@@ -33,9 +33,9 @@ function Register(props) {
     )
 
       const json = await response.json();
-      console.log(json);
+      console.log('register token:', json.data.token);
       if (json.success) {
-        localStorage.setItem('Token_Storage', json.data.token);
+        // localStorage.setItem('Token_Storage', json.data.token);
         setToken(json.data.token);
         console.log('Registration successful');
         document.getElementById('usernameInput').value='';

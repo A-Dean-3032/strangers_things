@@ -7,15 +7,12 @@ function Home(props) {
   const { username, setUsername, password, setPassword, token, setToken } =
     props;
 
-// Comment test
-
   useEffect(() => {
     // setToken(localStorage.getItem('Token_Storage'));
     checkUser();
   }, []);
 
   async function checkUser() {
-    setToken(localStorage.getItem('Token_Storage'));
     const response = await fetch(`${Base_URL}/${Cohort_Name}/users/me`,
      {
         headers: {
@@ -35,12 +32,10 @@ function Home(props) {
   return (
     <div>
       <div id='navbar'>
+        <button><Link to='profile'>Profile</Link></button>
         <button><Link to='/posts'>Posts</Link></button>
-        <button onClick={() => {
-          token = null;
-          username = null;
-          password = null
-        }}></button>
+        <button><Link to='/login'>Login</Link></button>
+        <button><Link to='register'>Sign Up</Link></button>
       </div>
       <h2>Home</h2>
       <p>Token: {token}</p>

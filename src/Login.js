@@ -15,7 +15,6 @@ const Login = (props) => {
       }
     })
 
-    // const token = props.token;
     const setToken = props.setToken;
 
   try{  
@@ -31,7 +30,6 @@ const Login = (props) => {
 
       const json = await response.json();
       if (json.success) {
-        localStorage.setItem('Token_Storage', json.data.token);
         setToken(json.data.token)
         navigate('/')
       } else if (!json.success) {
